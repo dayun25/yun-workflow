@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  # 配置api请求前缀
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: yun-workflow
+  datasource:
+    url: jdbc:mysql://localhost:3306/yun_workflow
+    username: root
+    password: root
+
+
+# springdoc-openapi项目配置
+springdoc:
+  group-configs:
+    - group: 'default'
+      packages-to-scan: com.dayun.yunworkflow.controller
+# knife4j的增强配置，不需要增强可以不配
+# 访问地址：ip:port{context-path}/doc.html http://localhost:8080/api/doc.html
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
